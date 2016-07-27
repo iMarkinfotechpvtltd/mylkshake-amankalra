@@ -13,12 +13,12 @@
 			<?php 
 			if ( has_post_thumbnail() ) { ?>
 			<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'home' ); ?>
-                        <img src="<?php echo $src[0];?>" alt="IMAGE">
+                       <a href="<?php the_permalink();?>" class="link-m">  <img src="<?php echo $src[0];?>" alt="IMAGE"></a>
 			<?php 
 			}
 			else {
 				?>
-				<img src="http://i.imgur.com/8mmUmxM.jpg">
+				 <a href="<?php the_permalink();?>" class="link-m"><img src="http://i.imgur.com/8mmUmxM.jpg"></a>
 				<?php 
 			}
 			?>
@@ -34,7 +34,7 @@ foreach( $categories as $category ) {
 
 ?>
      </ul>
-     <h2><?php the_title(); ?></h2>
+     <a href="<?php the_permalink();?>"><h2><?php the_title(); ?></h2></a>
        <p class="time-date"><?php the_time('d M Y');?></p>
      <?php echo content('50'); ?>
             
@@ -72,10 +72,10 @@ foreach( $categories as $category ) {
 			<div class="col-xs-6 col-lg-4 animated wow fadeInUp">
         <div class="insta-block">
            <div class="advert-box">
-            <img src="<?php echo $small_image_url1[0]; ?>" alt="image"/>    
+             <a href="<?php the_permalink();?>" class="link-m"><img src="<?php echo $small_image_url1[0]; ?>" alt="image"/></a>    
             </div> <!--img-box-->
           <div class="border-block"> 
-            <a href="<?php the_field('url',$arr1[0]);?>"><?php the_field('text',$arr1[0]);?></a> 
+            <a href="<?php the_field('url',$arr1[0]);?>" class="link-m"><?php the_field('text',$arr1[0]);?></a> 
           </div>       
         </div> <!--article-block-->
       </div> <!--col-md-4--> 
@@ -106,7 +106,7 @@ foreach( $categories as $category ) {
 
 				?>
                  </ul>
-            <h3><?php the_title(); ?></h3>   
+            <a href="<?php the_permalink();?>"><h3><?php the_title(); ?></h3></a>   
          
            <div class="poted-date"><?php the_time('d M Y');?></div>  
           </div> <!--top-heading Close-->
@@ -114,12 +114,12 @@ foreach( $categories as $category ) {
           <?php 
 			if ( has_post_thumbnail() ) { ?>
 			<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'blog' ); ?>
-                        <img src="<?php echo $src[0];?>" alt="IMAGE">
+                       <a href="<?php the_permalink();?>" class="link-m">  <img src="<?php echo $src[0];?>" alt="IMAGE"></a>
 			<?php 
 			}
 			else {
 				?>
-				<img src="http://i.imgur.com/rShAkDn.png">
+				 <a href="<?php the_permalink();?>" class="link-m"><img src="http://i.imgur.com/rShAkDn.png"></a>
 				<?php 
 			}
 			?>        

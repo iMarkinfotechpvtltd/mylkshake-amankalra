@@ -127,8 +127,10 @@ var scrollTop = jQuery(window).scrollTop();
       
 if (scrollTop > stickyNavTop) { 
    jQuery('.magazine-nav').addClass('sticky');
+   jQuery('body').addClass('sticky_hdr');
 } else {
     jQuery('.magazine-nav').removeClass('sticky'); 
+	 jQuery('body').removeClass('sticky_hdr');
 }
 };
  

@@ -33,7 +33,7 @@ $args = array ( 'post_type' => 'post','ORDER' => 'DESC','showposts'=>$count,'off
 			<div class="col-xs-6 col-lg-4 animated wow fadeInUp">
         <div class="insta-block">
            <div class="advert-box">
-            <img src="<?php echo $small_image_url1[0]; ?>" alt="image"/>    
+            <a href="<?php the_permalink();?>" class="link-m"> <img src="<?php echo $small_image_url1[0]; ?>" alt="image"/>  </a>  
             </div> <!--img-box-->
           <div class="border-block"> 
             <a href="<?php the_field('url',$arr1[$j]);?>"><?php the_field('text',$arr1[$j]);?></a> 
@@ -65,7 +65,7 @@ $args = array ( 'post_type' => 'post','ORDER' => 'DESC','showposts'=>$count,'off
 				}
 				?>
                  </ul>
-            <h3><?php the_title(); ?></h3>   
+            <a href="<?php the_permalink();?>"><h3><?php the_title(); ?></h3></a>   
          
            <div class="poted-date"><?php the_time('d M Y');?></div>  
           </div> <!--top-heading Close-->
@@ -73,12 +73,12 @@ $args = array ( 'post_type' => 'post','ORDER' => 'DESC','showposts'=>$count,'off
           <?php 
 			if ( has_post_thumbnail() ) { ?>
 			<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'blog' ); ?>
-                        <img src="<?php echo $src[0];?>" alt="IMAGE">
+                        <a href="<?php the_permalink();?>" class="link-m"> <img src="<?php echo $src[0];?>" alt="IMAGE"></a>
 			<?php 
 			}
 			else {
 				?>
-				<img src="http://i.imgur.com/rShAkDn.png">
+				 <a href="<?php the_permalink();?>" class="link-m"><img src="http://i.imgur.com/rShAkDn.png"></a>
 				<?php 
 			}
 			?>        

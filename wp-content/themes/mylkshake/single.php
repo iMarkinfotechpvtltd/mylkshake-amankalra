@@ -71,7 +71,7 @@ foreach( $categories as $category ) {
 		$category=get_the_category($post->ID);
 		query_posts(array(
 			'post_type'      => 'post', // You can add a custom post type if you like
-			'posts_per_page' => -1,
+			'posts_per_page' => 3,
 			'tax_query' => array(
                    array(
                        'taxonomy' => 'category',
@@ -88,7 +88,7 @@ foreach( $categories as $category ) {
          <div class="interst-block">
             <div class="img-box">
                <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'blog-small' ); ?>
-			<img src="<?php echo $src[0];?>" alt="ABOUT" />
+			 <a href="<?php the_permalink();?>" class="link-m"><img src="<?php echo $src[0];?>" alt="ABOUT" /></a>
             </div>
            	<div class="cont-box">
               <ul>
@@ -103,7 +103,7 @@ foreach( $categories as $category ) {
 ?>
               </ul>
               
-              <h4><?php the_title(); ?></h4>
+              <a href="<?php the_permalink();?>"><h4><?php the_title(); ?></h4></a>
               <p><?php the_time('d M Y');?> by <span><?php the_author(); ?></span></p>    
             </div> 
          </div>    

@@ -35,7 +35,7 @@ if($category_query->have_posts()):
 
 					?>
                  </ul>
-            <h3><?php the_title(); ?></h3>   
+            <a href="<?php the_permalink();?>" class="link-m"><h3><?php the_title(); ?></h3></a>   
          
            <div class="poted-date"><?php the_time('d M Y');?></div>  
           </div> <!--top-heading Close-->
@@ -43,12 +43,12 @@ if($category_query->have_posts()):
           <?php 
 			if ( has_post_thumbnail() ) { ?>
 			<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'blog' ); ?>
-                        <img src="<?php echo $src[0];?>" alt="IMAGE">
+                        <a href="<?php the_permalink();?>" class="link-m"> <img src="<?php echo $src[0];?>" alt="IMAGE"></a>
 			<?php 
 			}
 			else {
 				?>
-				<img src="http://i.imgur.com/rShAkDn.png">
+			 <a href="<?php the_permalink();?>" class="link-m"><img src="http://i.imgur.com/rShAkDn.png"></a>
 				<?php 
 			}
 			?>                
