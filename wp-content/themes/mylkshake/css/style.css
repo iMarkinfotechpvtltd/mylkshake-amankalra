@@ -193,7 +193,7 @@ h7 {
 
 .top-menu-bar ul li.current-menu-item a,
 .top-menu-bar ul li:hover a {
-    color: #292929;
+    color: #292929 !important;
 }
 
 .search-box form .btn.btn-default {
@@ -2227,7 +2227,7 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
   MEDIA 1600 
  ******************************/
 
-@media(min-width:1600px) {
+@media(min-width:1500px) {
     .sneakers {
         margin: -30px 225px 0;
     }
@@ -2614,16 +2614,16 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
         right: -40px;
     }
     .bar-logo img {
-        height: 50px;
+        height: 40px;
         max-width: none;
         width: auto;
     }
     .bar-logo {
-        height: 70px;
+        height: 58px;
         margin: 15px auto 0;
     }
     #responsive-menu-container .bar-logo {
-        margin: 15px 0 0 5%;
+        margin: 15px 0 0 0;
         width: auto;
     }
     .container.tags-main article {
@@ -2729,9 +2729,9 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
         text-align: center;
     }
     #responsive-menu-wrapper .mob-menu-logo {
-        margin-top: 20px;
+        margin-top: 13px;
         position: relative;
-        text-align: left;
+        text-align: center;
     }
     #responsive-menu-wrapper .mobile-top-navi {
         background-color: #f9f9f9;
@@ -2881,11 +2881,41 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
     }
     #responsive-menu-button.is-active {
         background-image: url(../images/CLOSE-BTN.svg);
-        top: 33px !important;
-        left: 67% !important;
+        /*top: 33px !important;*/
+        /*left: auto !important;*/
+        /*right: 29%;*/
     }
     #responsive-menu-button span {
         display: none;
+    }
+    .search-box {
+        font-size: 20px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+}
+
+@media(max-width:800px) {
+    .article-contnet-box .btn.btn-default.btn-more {
+        padding: 10px 0px 8px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 193px;
+        margin: auto;
+        bottom: 50px;
+        text-align: center;
+        z-index: 11;
+    }
+    .border-block a {
+        bottom: auto;
+        top: 75%;
     }
 }
 
@@ -3051,12 +3081,6 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
     .magazine-nav {
         top: 0;
     }
-    .search-box {
-        font-size: 20px;
-        position: absolute;
-        right: 20px;
-        top: 19px;
-    }
     .top-middle.sticky .logo img {
         height: auto;
         opacity: 1;
@@ -3067,7 +3091,7 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
     }
     .close-button {
         background-size: 100% auto;
-        margin: 10px 25px 0;
+        margin: 10px 15px 0;
         width: 36px;
     }
     .search-box-full.expand {
@@ -3250,7 +3274,7 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
     .bloging ul li .comment-respond {
         padding: 15px 0 0;
     }
-    .mylkshake .row-fluid #sb_instagram #sbi_images .sbi_item + .sbi_item + .sbi_item +.sbi_item + .sbi_item + .sbi_item + .sbi_item ~ .sbi_item {
+    .mylkshake .row-fluid #sb_instagram #sbi_images .sbi_item + .sbi_item + .sbi_item +.sbi_item + .sbi_item + .sbi_item ~ .sbi_item {
         display: none;
     }
     .search-box-full .search-form {
@@ -3259,6 +3283,10 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
     .responsive-menu-button {
         top: 27px !important;
     }
+	.insta-block a {
+    font-size: 18px;
+  }
+
 }
 
 
@@ -3272,6 +3300,28 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
     }
 }
 
+@media(max-width:640px) {
+    .article-section .col-xs-6 {
+        width: 100%;
+    }
+    .article-contnet-box .btn.btn-default.btn-more {
+        position: static;
+    }
+    .insta-block {
+        min-height: 0;
+        /* HEIGHT: 100%; */
+        padding-bottom: 165px;
+    }
+    .border-block a {
+        bottom: 6%;
+        top: auto;
+    }
+  .article-section .article-block, .insta-block {
+    min-height: auto;
+   }	
+	
+}
+
 @media(max-width:620px) {
     .insta-block .border-block a {
         font-size: 19px;
@@ -3280,7 +3330,7 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
 
 @media(max-width:550px) {
     .insta-block .border-block a {
-        font-size: 25px;
+        font-size: 16px;
     }
     .top-menu-bar ul li {
         border-bottom: 1px solid #cdcdcd;
@@ -3323,8 +3373,8 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
     .sticky_hdr .responsive-menu-button {
         top: 27px !important;
     }
-    #responsive-menu-button.is-active {
-        left: 63% !important;
+    .article-contnet-box .btn.btn-default.btn-more {
+        position: static;
     }
 }
 
@@ -3390,9 +3440,6 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
     #responsive-menu-wrapper {
         height: 108%;
     }
-    #responsive-menu-button.is-active {
-        left: 60% !important;
-    }
 }
 
 
@@ -3411,21 +3458,8 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
     .top-middle .container-fluid .row {
         margin-top: 0;
     }
-    .logo {
-        margin-bottom: 14px;
-        margin-top: 35px;
-        width: 164px;
-    }
-    .logo,
-    .top-middle.sticky .logo {
-        margin-top: 35px;
-        width: 164px;
-    }
     body {
         overflow-x: hidden;
-    }
-    .top-middle.sticky .container-fluid .row .search-box {
-        top: 19px;
     }
     .main-content {
         margin-top: 65px;
@@ -3447,9 +3481,6 @@ body:not(.search-results) .container.tags-main article footer span a:hover {
     }
     .footer .footer-block {
         width: 100%;
-    }
-    .responsive-menu-button {
-        top: 27px !important;
     }
 }
 
