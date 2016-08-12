@@ -33,11 +33,9 @@ $args = array ( 'post_type' => 'post','ORDER' => 'DESC','showposts'=>$count,'off
 			<div class="col-xs-6 col-lg-4 animated wow fadeInUp">
         <div class="insta-block">
            <div class="advert-box">
-            <a href="<?php the_permalink();?>" class="link-m"> <img src="<?php echo $small_image_url1[0]; ?>" alt="image"/>  </a>  
+            <a href="<?php the_field('url',$arr1[$j]);?>"> <img src="<?php echo $small_image_url1[0]; ?>" alt="image"/></a> 
             </div> <!--img-box-->
-          <div class="border-block"> 
-            <a href="<?php the_field('url',$arr1[$j]);?>"><?php the_field('text',$arr1[$j]);?></a> 
-          </div>       
+               
         </div> <!--article-block-->
       </div> <!--col-md-4--> 
 			   <?php 
@@ -65,7 +63,10 @@ $args = array ( 'post_type' => 'post','ORDER' => 'DESC','showposts'=>$count,'off
 				}
 				?>
                  </ul>
-            <a href="<?php the_permalink();?>"><h3><?php the_title(); ?></h3></a>   
+            <a href="<?php the_permalink();?>"><h3><?php if (strlen($post->post_title) > 20) {
+echo substr(the_title($before = '', $after = '', FALSE), 0, 20) . '...'; } else {
+the_title();
+} ?></h3></a>   
          
            <div class="poted-date"><?php the_time('d M Y');?></div>  
           </div> <!--top-heading Close-->

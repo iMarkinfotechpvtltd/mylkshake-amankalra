@@ -167,13 +167,13 @@ opacity:0
 
 .hover-overlay h3 span b + b:before { background: #ff5454; border-radius: 50%; content: ""; display: inline-block; height: 4px; position: relative; top:0px; vertical-align: middle; width: 4px; }
 .owl-carousel .owl-video-play-icon::before {
-  content:"\f144";
-  font-family:'FontAwesome';
+  content:"c";
+  font-family: "new-icon";
   font-size: 100px;
 }
 .owl-carousel .owl-video-play-icon{
-	text-shadow:0 0 3px #333;
-	-webkit-text-shadow:0 0 3px #333;	
+	text-shadow:0 0 3px rgba(0, 0, 0, 0.15);
+	-webkit-text-shadow:0 0 3px rgba(0, 0, 0, 0.15);	
  }
 
 .btns-mob { display:none;}
@@ -261,7 +261,7 @@ opacity:0
 
 .title-logo { margin: 0 auto 30px; max-width: 200px;}
 
-.tv-page-wrapper #page_content_wrapper { padding: 10px; width: 100%;}
+.tv-page-wrapper #page_content_wrapper { padding: 0px; width: 100%;}
 
 .owl-carousel .item-video { border: 1px solid #f4f4f4;}
 

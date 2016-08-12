@@ -172,7 +172,8 @@
             } 
                     ?>
 
-        <div class="item-video"><a class="owl-video" href="<?php echo the_field('video_link'); ?>"></a> </div>
+        <div class="item-video" id="video_<?php echo $post->ID;?>"><a class="owl-video" href="<?php echo the_field('video_link'); ?>"></a> 
+		</div>
          <?php
                 endwhile;
             }
@@ -575,6 +576,80 @@ jQuery(".hover-overlay>div").each(function(){
 
 
 });
+/****************************Section_Arrow********************************/
+ jQuery(document).ready(function(){
+setTimeout(function(){
+	jQuery(".fa-angle-right:last").click(function(){
+			var indexxx = jQuery(".owl-stage-outer:eq(1)>.owl-stage>.active");
+			var index_fin = jQuery(".owl-stage-outer:eq(1)>.owl-stage>.owl-item").index( indexxx );
+			// alert(index_fin);
+			var id =jQuery(".owl-stage-outer:eq(1)>.owl-stage>.active").next(".owl-item").find(".item-video").attr("id");
+			var arr = id.split('video_');
+			var id = arr[1];
+			jQuery.ajax({
+
+			type: "POST",
+
+			url:"<?php bloginfo('template_url'); ?>/ajax/tv.php",
+
+			data:{
+					id:id
+				 },
+
+			success:function(resp) 
+
+			{
+					if(resp!="")
+					{
+						jQuery('.ajax').empty().html(resp);
+					}
+			} 
+
+			});
+
+		 });
+}, 3000);
+		
+
+
+});
+ jQuery(document).ready(function(){
+setTimeout(function(){
+	jQuery(".fa-angle-left:last").click(function(){
+			var indexxx = jQuery(".owl-stage-outer:eq(1)>.owl-stage>.active");
+			var index_fin = jQuery(".owl-stage-outer:eq(1)>.owl-stage>.owl-item").index( indexxx );
+			// alert(index_fin);
+			var id =jQuery(".owl-stage-outer:eq(1)>.owl-stage>.active").prev(".owl-item").find(".item-video").attr("id");
+			var arr = id.split('video_');
+			var id = arr[1];
+			jQuery.ajax({
+
+			type: "POST",
+
+			url:"<?php bloginfo('template_url'); ?>/ajax/tv.php",
+
+			data:{
+					id:id
+				 },
+
+			success:function(resp) 
+
+			{
+					if(resp!="")
+					{
+						jQuery('.ajax').empty().html(resp);
+					}
+			} 
+
+			});
+
+		 });
+}, 3000);
+		
+
+
+});
+/****************************Section_Arrow********************************/
  </script>
  <script>
  jQuery(".disable-owl-swipe").on("touchstart mousedown", function(e) {

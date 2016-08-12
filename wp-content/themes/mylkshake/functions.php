@@ -471,7 +471,7 @@ return $content;
 
 add_image_size( 'home', 1349, 545, true );
 add_image_size( 'blog', 424, 294, true );
-add_image_size( 'insta', 424, 294, true );
+add_image_size( 'insta', 424, 529, true );
 add_image_size( 'tv', 884, 383, true );
 add_image_size( 'tv-text', 392, 54, true );
 add_image_size( 'about', 1349, 545, true );

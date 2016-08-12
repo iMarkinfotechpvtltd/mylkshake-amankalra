@@ -3,17 +3,20 @@
 jQuery(document).ready(function(){
 	jQuery('.search-box i').click(function(){
 		jQuery('.search-box-full').addClass('expand');
+		jQuery('body').addClass('fixed-wrap');
 		jQuery('.search-form .form-control').focus();
 		
 	 });
-	jQuery(".close-button").click(function(){
+	jQuery(".close-button, .search-box-full").click(function(){
       jQuery('.search-box-full').removeClass('expand');
+	  jQuery('body').removeClass('fixed-wrap');
+
      });
 	 
-//	jQuery( ".search-box" ).click(function( event ) {
-//       event.stopPropagation();
-//  // Do something
-//     }); 
+	jQuery( ".search-form" ).click(function( event ) {
+       event.stopPropagation();
+  // Do something
+     }); 
 	 
 	 
 	 
@@ -25,15 +28,15 @@ jQuery(document).ready(function(){
     $big.owlCarousel({
         items: 1,
         margin: 0,
-		nav: false,
+		nav: true,
 		touchDrag: false,
-        mouseDrag: false,
-		//navText:["<i class='fa fa-angle-left' aria-hidden='true'></i>","<i class='fa fa-angle-right' aria-hidden='true'></i>"],
+       mouseDrag: false,
+		navText:["<i class='fa fa-angle-left' aria-hidden='true'></i>","<i class='fa fa-angle-right' aria-hidden='true'></i>"],
         dots: false
     }).on('changed.owl.carousel', function(e) {
         if (!flag) {//
            flag = true;
-//            $thumb.trigger('to.owl.carousel', [e.item.index, 300, true]);
+           // $thumb.trigger('to.owl.carousel', [e.item.index, 300, true]);
           $bottom.trigger('to.owl.carousel', [e.item.index, 300, true]);
            flag = false;
        }
@@ -58,6 +61,8 @@ jQuery(document).ready(function(){
     $thumb.owlCarousel({
         margin: 26,
         items: 7,
+		touchDrag: false,
+        mouseDrag: false,
         nav: true,
 		navText:["<i class='fa fa-angle-left' aria-hidden='true'></i>","<i class='fa fa-angle-right' aria-hidden='true'></i>"],
         dots: false,
@@ -86,14 +91,14 @@ jQuery(document).ready(function(){
 }
 
 
-    }).on('click', '.owl-item', function() {
-        $big.trigger('to.owl.carousel', [jQuery(this).index(), 300, true]);
-    }).on('changed.owl.carousel', function(e) {//
-//        if (!flag) {
-//            flag = true;
-//            $big.trigger('to.owl.carousel', [e.item.index, 300, true]);
-//            flag = false;
-//        }
+   // }).on('click', '.owl-item', function() {
+        //$big.trigger('to.owl.carousel', [jQuery(this).index(), 300, true]);
+   // }).on('changed.owl.carousel', function(e) {//
+      //  if (!flag) {
+          //  flag = true;
+           // $big.trigger('to.owl.carousel', [e.item.index, 300, true]);
+           // flag = false;
+      //  }
   });
   
   
@@ -106,7 +111,7 @@ jQuery(document).ready(function(){
             items:1,
             nav:true
         },
-        600:{
+        480:{
             items:2,
             nav:false
         },
@@ -120,25 +125,25 @@ jQuery(document).ready(function(){
   
 /*****************************Sticky-nav*******************/  
   
-  var stickyNavTop = jQuery('.magazine-nav').offset().top;
+  // var stickyNavTop = jQuery('.magazine-nav').offset().top;
  
-var stickyNav = function(){
-var scrollTop = jQuery(window).scrollTop();
+// var stickyNav = function(){
+// var scrollTop = jQuery(window).scrollTop();
       
-if (scrollTop > stickyNavTop) { 
-   jQuery('.magazine-nav').addClass('sticky');
-   jQuery('body').addClass('sticky_hdr');
-} else {
-    jQuery('.magazine-nav').removeClass('sticky'); 
-	 jQuery('body').removeClass('sticky_hdr');
-}
-};
+// if (scrollTop > stickyNavTop) { 
+   // jQuery('.magazine-nav').addClass('sticky');
+   // jQuery('body').addClass('sticky_hdr');
+// } else {
+    // jQuery('.magazine-nav').removeClass('sticky'); 
+	 // jQuery('body').removeClass('sticky_hdr');
+// }
+// };
  
-stickyNav();
+// stickyNav();
  
-jQuery(window).scroll(function() {
-    stickyNav();
-});
+// jQuery(window).scroll(function() {
+    // stickyNav();
+// });
   
 	 
 	 

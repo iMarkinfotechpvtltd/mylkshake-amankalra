@@ -32,6 +32,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 <script>
 jQuery(document).ready(function()
 {
@@ -51,9 +52,10 @@ jQuery(document).ready(function()
 	
 	
 </head>
-
 <body>
-
+<div id="site_loader">
+	<img src="<?php echo  get_template_directory_uri(); ?>/images/page_loader.gif" id="loader1">
+</div>
 <div class="top-bar animated wow fadeInDown">
    <div class="container-fluid">
     <div class="row">
@@ -154,7 +156,7 @@ jQuery(document).ready(function()
                     
                         <input type="text" class="form-control" placeholder="Enter Keyword" name="s" id="s" value="<?php echo get_search_query(); ?>">
                         <p>Press Enter / Return to Search</p>
-                        <input type="submit" class="btn btn-default" value="Search">
+                        <!--<input type="submit" class="btn btn-default" value="Search">-->
 				   
                     </form>
 </div>

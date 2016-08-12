@@ -84,15 +84,18 @@
     <p>Crédits © <?php echo date('Y');?> Mylkshake . All rights reserved. Site by Mylkshake. <span class="branding">Developed By: <a target="_blank" href="http://www.imarkinfotech.com">iMark <span class="ib">I</span>nfotech</a></span></p>
   </div>
 </div> <!--footer close-->
-
 <?php wp_footer(); ?>
-
-    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/my-script.js"></script>
+<script>
+jQuery(document).ready(function(){
+	jQuery('#site_loader').remove();
+});
+</script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/bootstrap.min.js"></script>
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/owl.carousel.min.js"></script> 
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/wow.min.js"></script>
 
+    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/my-script.js"></script>
 
        <script type="text/javascript">
 jQuery(function() {

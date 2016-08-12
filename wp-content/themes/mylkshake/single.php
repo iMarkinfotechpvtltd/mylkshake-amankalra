@@ -14,8 +14,9 @@ while ( have_posts() ) : the_post();
 
 <div class="article-banner art-in animated wow fadeInUp">
  <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID),'about' ); ?>
+ <div class="article-page-banner">
     <img src="<?php echo $src[0];?>" alt="ABOUT" />
-  
+  </div>
    <div class="sneakers">  
      <ul>
        <?php
